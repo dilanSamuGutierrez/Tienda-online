@@ -50,17 +50,18 @@ export default function CheckoutPage() {
     }
   }
 
-  if (items.length === 0) {
-    return (
-      <div className="container mx-auto px-4 py-16 text-center">
-        <h1 className="text-2xl font-bold mb-4">Tu carrito está vacío</h1>
-        <p className="text-muted-foreground mb-8">Agrega algunos productos antes de proceder al checkout</p>
-        <Button asChild>
-          <Link href="/tienda">Ir a la Tienda</Link>
-        </Button>
-      </div>
-    )
-  }
+if ((items || []).length === 0) {
+  return (
+    <div className="container mx-auto px-4 py-16 text-center">
+      <h1 className="text-2xl font-bold mb-4">Tu carrito está vacío</h1>
+      <p className="text-muted-foreground mb-8">Agrega algunos productos antes de proceder al checkout</p>
+      <Button asChild>
+        <Link href="/tienda">Ir a la Tienda</Link>
+      </Button>
+    </div>
+  )
+}
+
 
   return (
     <div className="min-h-screen bg-background">
